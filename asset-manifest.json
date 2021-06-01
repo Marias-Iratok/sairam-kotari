@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/sairam-kotari/static/css/main.7234fe29.chunk.css",
+    "main.js": "/sairam-kotari/static/js/main.c9f233d7.chunk.js",
+    "main.js.map": "/sairam-kotari/static/js/main.c9f233d7.chunk.js.map",
+    "runtime-main.js": "/sairam-kotari/static/js/runtime-main.6583889a.js",
+    "runtime-main.js.map": "/sairam-kotari/static/js/runtime-main.6583889a.js.map",
+    "static/js/2.efbf1b42.chunk.js": "/sairam-kotari/static/js/2.efbf1b42.chunk.js",
+    "static/js/2.efbf1b42.chunk.js.map": "/sairam-kotari/static/js/2.efbf1b42.chunk.js.map",
+    "static/js/3.73886ce4.chunk.js": "/sairam-kotari/static/js/3.73886ce4.chunk.js",
+    "static/js/3.73886ce4.chunk.js.map": "/sairam-kotari/static/js/3.73886ce4.chunk.js.map",
+    "index.html": "/sairam-kotari/index.html",
+    "static/css/main.7234fe29.chunk.css.map": "/sairam-kotari/static/css/main.7234fe29.chunk.css.map",
+    "static/js/2.efbf1b42.chunk.js.LICENSE.txt": "/sairam-kotari/static/js/2.efbf1b42.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/sairam-kotari/static/media/background.d761372b.jpg",
+    "static/media/profile.84e5c80e.jpg": "/sairam-kotari/static/media/profile.84e5c80e.jpg",
+    "static/media/project-1.a0955aab.JPG": "/sairam-kotari/static/media/project-1.a0955aab.JPG",
+    "static/media/project-2.8a57d8b5.JPG": "/sairam-kotari/static/media/project-2.8a57d8b5.JPG",
+    "static/media/project-3.77f1e713.JPG": "/sairam-kotari/static/media/project-3.77f1e713.JPG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6583889a.js",
+    "static/js/2.efbf1b42.chunk.js",
+    "static/css/main.7234fe29.chunk.css",
+    "static/js/main.c9f233d7.chunk.js"
+  ]
+}
