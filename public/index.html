@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+
+  <title>Sairam Kotari - "front-end developer"</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.6.0/jQuery.print.min.js"
+    integrity="sha512-i8ERcP8p05PTFQr/s0AZJEtUwLBl18SKlTOZTH0yK5jVU0qL8AIQYbbG5LU+68bdmEqJ6ltBRtCxnmybTbIYpw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="../src/validate.js"></script> -->
+
+  <script type="text/JavaScript">
+      let Messages = [];
+      $("document").ready(function () {
+        let Messages = [];
+        // --------- On Page Load Animation Effects ---------
+        $(".home .home-container h1").slideDown(1500);
+        $(".home .home-container p .typed").show(2000, "swing");
+        $("#Projects").css('background', '#f5f8fd');
+        
+
+        // --------- Display Animation on Scroll ---------
+        $(window).scroll(function(){
+          let aboutAnime = $("#main section[id=About]").offset().top-300;
+          let skillsAnime = $("#main section[id=About]").offset().top+150;
+          let resumeAnime = $("#main section[id=Resume]").offset().top-300;
+          let projectsAnime = $("#main section[id=Projects]").offset().top-330;
+          let contactAnime = $("#main section[id=Contact]").offset().top-300;
+          
+          // ---------  About Component Animations  ---------
+          const AboutEffect = ()=>{
+            if(pageYOffset >= aboutAnime){
+              $(".about img").slideDown(1000);
+              $("#About .content .sub-content").fadeIn(100);
+              $("#About .content .sub-content").animate({right: 0}, 1000);
+            }
+          }
+          AboutEffect();
+
+          // ---------  Skills Component Animations  ---------
+          const SkillsEffect = ()=>{
+            if(pageYOffset >= skillsAnime){
+              $(".skills .skills-content .skills-container-1").fadeIn(2000);
+              $(".skills .skills-content .skills-container-2").fadeIn(2000);
+            }
+          }
+          SkillsEffect();
+          
+          // ---------  Resume Component Animations  ---------
+          const ResumeEffect = ()=>{
+            if(pageYOffset >= resumeAnime){
+              $(".resume .resume-container .resume-content-1 div").fadeIn(100);
+              $(".resume .resume-container .resume-content-2 div").fadeIn(100);
+              $(".resume .resume-container .resume-content-1 div").animate({left: 0}, 1000);
+              $(".resume .resume-container .resume-content-2 div").animate({right: 0}, 1000);
+            }
+          }
+          ResumeEffect();
+
+          // --------- Resume Download Button ---------
+          $('.resume-download-btn button').click(function(){
+            $.print("#resume-print");
+          
+          });
+
+          // ---------  Projects Component Animations  ---------
+          const ProjectsEffect = ()=>{
+            if(pageYOffset >= projectsAnime){
+              $(".projects .project-lists .project-item .project-img").fadeIn(1000);
+              
+            }
+          }
+          ProjectsEffect();
+
+          // ---------  Contact Component Animations  ---------
+          const ContactEffect = ()=>{
+            if(pageYOffset >= contactAnime){
+              $(".contact .info").fadeIn(100);
+              $(".contact .info").animate({left: 0}, 500);
+              $(".contact .email-form").fadeIn(100);
+              $(".contact .email-form").animate({right: 0}, 500);
+            }
+          }
+          ContactEffect();
+
+        });
+
+        // --------- Back-To-Top Button --------- 
+        $(window).scroll(function () {
+        
+          if ($(this).scrollTop() > 150) {
+            $(".back-to-top").fadeIn();
+          } else {
+            $(".back-to-top").fadeOut();
+          }
+        });
+        
+        $(".back-to-top").click(function () {
+          $("html, body").animate({ scrollTop: 0 }, 200);
+        });
+      
+        // --------- Main Navigations Highlight with color on scroll ---------
+        $(window).scroll(function () {
+          var current = "";
+          $("#main section").each((index, element) => {
+            const sectionTop = element.offsetTop;
+            
+            if (pageYOffset >= sectionTop) {
+              current = $(element).attr('id');
+            }
+          })
+          $(".nav-menu ul li a").each((index, evt) => {
+            let dem = $(evt).attr('href');
+      
+            $(evt).removeClass('active');
+            $(evt).closest(".nav-item").removeClass("active");
+      
+            if (dem === `#${current}`) {
+              $(evt).closest(".nav-item").addClass("active");
+            }
+          });
+      
+        })
+
+        // --------- Message Sending Functionality ---------
+        
+        $(".message-form .email-form #submit-msg").on('click', function(evt){
+          let name = $(".message-form .email-form input[name='name']").val();
+          let mail = $(".message-form .email-form input[name='email']").val();
+          let subject = $(".message-form .email-form input[name='subject']").val();
+          let msg = $(".message-form .email-form textarea[name='message']").val();
+                   
+          if(mail.length==0 && subject.length==0){
+            alert("Please fill atleast mail and subject fields");  
+          }else{
+            alert(`Message successfully sent to Mr. Sairam Kotari. Thank You.`);
+          }
+        });
+        
+
+      });
+  
+  </script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+</body>
+
+</html>
